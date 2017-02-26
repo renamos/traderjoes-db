@@ -1,0 +1,40 @@
+.product-page-container{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  font-size:.8em;
+  }
+  p{
+    max-width: 40%;
+  }
+  img{
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media(max-width: 414px){
+  .product-page-container{
+    h1{
+      font-size: 1.5em;
+    }
+    img{
+      width:70%;
+      height: auto;
+    }
+    p{
+      max-width: 70%;
+    }
+  }
+}
+
+.product-page-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+}

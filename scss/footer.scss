@@ -1,0 +1,41 @@
+footer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 300;
+  margin: 1em;
+  color:white;
+  h3{
+    margin:0;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  a:hover{
+    color: #d6d1c9;
+    cursor: pointer;
+  }
+}
+#footer{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.fa-github{
+  margin-right: .25em;
+}
+.fa-linkedin{
+  margin-left: .25em;
+}
+
+@media(max-width: 414px){
+  footer{
+    p{
+      font-size: .8em;
+    }
+  }
+}

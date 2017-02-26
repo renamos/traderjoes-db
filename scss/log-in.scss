@@ -1,0 +1,10 @@
+#log-in{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+label, input{
+  margin: 2px;
+  width: 25%;
+}
+}

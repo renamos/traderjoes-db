@@ -1,0 +1,118 @@
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  a{
+    text-decoration: none;
+  }
+  a:visited{
+    text-decoration: none;
+  }
+}
+
+.card {
+  border: 1px solid #A6A5AC;
+  width: 250px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 5px;
+  transition: all .2s;
+  color: #A6A5AC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    flex: 1;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+  }
+  ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0;
+    margin: 20px 0 20px 0;
+
+    h4 {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      color: black;
+    }
+    li {
+      margin: .1em 0 .1em 0;
+      font-family: 'Lato', sans-serif;
+    }
+  }
+}
+
+;
+
+.feedback{
+  display: flex;
+  justify-content: center;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+#search-bar-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  input {
+    margin-bottom: 1em;
+    text-align: center;
+    box-sizing: inherit;
+    padding: 5px;
+    font-size: 1em;
+    width: 35%;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    outline: 0;
+    font-weight: 400;
+    transition: all .2s;
+    border-radius: .25em;
+  }
+
+  input:-moz-placeholder{
+    color: #000000;
+  }
+  input:-ms-input-placeholder{
+    color: #000000;
+  }
+  input:-moz-placeholder{
+    color: #000000;
+  }
+  input::-webkit-input-placeholder{
+    color: #000000;
+  }
+  input:focus{
+    outline: 0;
+  }
+  input:focus::-webkit-input-placeholder { color:transparent; }
+  input:focus:-moz-placeholder { color:transparent; }
+  input:focus::-moz-placeholder { color:transparent; }
+  input:focus:-ms-input-placeholder { color:transparent; }
+}
+
+@media(max-width: 414px){
+  #search-bar-container{
+    input{
+      width: 80%;
+    }
+  }
+}
+
+.loader-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
