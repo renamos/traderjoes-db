@@ -8,7 +8,7 @@ import {SaveProduct} from '../actions/products'
 
 class AddProduct extends Component {
 
-    state = {seasonal: null, sending: false};
+    state = {seasonal: null, sending: false, discontinued: null};
 
     componentWillMount() {
         this.props.FetchCategories();
@@ -25,11 +25,6 @@ class AddProduct extends Component {
 
     //Two methods that are triggered on change
 
-     seasonalRadio(value){
-     this.setState({
-     seasonal: value
-     })
-     }
 
     submit(event) {
 
@@ -42,7 +37,6 @@ class AddProduct extends Component {
                 alert('Please fill all data')
                 return
             }
-
             var data =
                 {
                     name: this.refs.name.value,
@@ -51,12 +45,24 @@ class AddProduct extends Component {
                     sku: this.refs.sku.value,
                     price: this.refs.price.value,
                     grams: this.refs.grams.value,
-                    category: this.refs.category.value
+                    category: this.refs.category.value,
+                    discontinued: this.state.discontinued == "true",
+                    seasonal: this.state.seasonal == "true"
 
                 };
             this.setState({sending: true});
             this.props.SaveProduct(data);
         }.bind(this), 300)
+
+    }
+
+    changeDiscontinued(e){
+       this.setState({discontinued: e.target.value})
+
+    }
+
+    changeSeasonal(e){
+        this.setState({seasonal: e.target.value})
 
     }
 
@@ -82,38 +88,25 @@ class AddProduct extends Component {
                         <label>Description</label>
                         <textarea ref="description"></textarea><br/>
 
-                        {/* <label>Discontinued: </label>
-                         <select ref="discontinued">
-                         <option>Select</option>
-                         <option value="true">Yes</option>
-                         <option value="false">No</option>
-                         </select>
-
-                         <label>Seasonal: </label>
-                         <select ref="seasonal">
-                         <option>Select</option>
-                         <option value="true">Yes</option>
-                         <option value="false">No</option>
-                         </select>*/}
                         <label>Discontinued: </label>
                         <label>
-                         <input name="discontinued" type="radio" value="true"/>
-                         Yes
-                         </label>
-                         <label>
-                         <input name="discontinued" type="radio" value="false"/>
-                         No
-                         </label><br/>
-                         <label>Seasonal: </label>
-                         <label>
-                         <input name="seasonal" type="radio"/>
-                         Yes
-                         </label>
+                            <input name="discontinued" type="radio" value="true" onChange={this.changeDiscontinued.bind(this)}/>
+                            Yes
+                        </label>
+                        <label>
+                            <input name="discontinued" type="radio" value="false" onChange={this.changeDiscontinued.bind(this)}/>
+                            No
+                        </label><br/>
+                        <label>Seasonal: </label>
+                        <label>
+                            <input name="seasonal" type="radio" value="true" onChange={this.changeSeasonal.bind(this)}/>
+                            Yes
+                        </label>
 
-                         < label >
-                         <input name="seasonal" type="radio"/>
-                         No
-                         </label><br/>
+                        <label>
+                            <input name="seasonal" type="radio" value="false" onChange={this.changeSeasonal.bind(this)}/>
+                            No
+                        </label><br/>
                         <label>Category: </label>
                         <select ref="category">
                             <option>Select</option>

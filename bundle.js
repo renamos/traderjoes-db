@@ -16787,7 +16787,7 @@ var AddProduct = function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddProduct.__proto__ || Object.getPrototypeOf(AddProduct)).call.apply(_ref, [this].concat(args))), _this), _this.state = { seasonal: null, sending: false }, _temp), _possibleConstructorReturn(_this, _ret);
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddProduct.__proto__ || Object.getPrototypeOf(AddProduct)).call.apply(_ref, [this].concat(args))), _this), _this.state = { seasonal: null, sending: false, discontinued: null }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(AddProduct, [{
@@ -16808,13 +16808,7 @@ var AddProduct = function (_Component) {
 
         //Two methods that are triggered on change
 
-    }, {
-        key: 'seasonalRadio',
-        value: function seasonalRadio(value) {
-            this.setState({
-                seasonal: value
-            });
-        }
+
     }, {
         key: 'submit',
         value: function submit(event) {
@@ -16827,7 +16821,6 @@ var AddProduct = function (_Component) {
                     alert('Please fill all data');
                     return;
                 }
-
                 var data = {
                     name: this.refs.name.value,
                     description: this.refs.description.value,
@@ -16835,12 +16828,24 @@ var AddProduct = function (_Component) {
                     sku: this.refs.sku.value,
                     price: this.refs.price.value,
                     grams: this.refs.grams.value,
-                    category: this.refs.category.value
+                    category: this.refs.category.value,
+                    discontinued: this.state.discontinued == "true",
+                    seasonal: this.state.seasonal == "true"
 
                 };
                 this.setState({ sending: true });
                 this.props.SaveProduct(data);
             }.bind(this), 300);
+        }
+    }, {
+        key: 'changeDiscontinued',
+        value: function changeDiscontinued(e) {
+            this.setState({ discontinued: e.target.value });
+        }
+    }, {
+        key: 'changeSeasonal',
+        value: function changeSeasonal(e) {
+            this.setState({ seasonal: e.target.value });
         }
     }, {
         key: 'render',
@@ -16905,13 +16910,13 @@ var AddProduct = function (_Component) {
                         _react2.default.createElement(
                             'label',
                             null,
-                            _react2.default.createElement('input', { name: 'discontinued', type: 'radio', value: 'true' }),
+                            _react2.default.createElement('input', { name: 'discontinued', type: 'radio', value: 'true', onChange: this.changeDiscontinued.bind(this) }),
                             'Yes'
                         ),
                         _react2.default.createElement(
                             'label',
                             null,
-                            _react2.default.createElement('input', { name: 'discontinued', type: 'radio', value: 'false' }),
+                            _react2.default.createElement('input', { name: 'discontinued', type: 'radio', value: 'false', onChange: this.changeDiscontinued.bind(this) }),
                             'No'
                         ),
                         _react2.default.createElement('br', null),
@@ -16923,13 +16928,13 @@ var AddProduct = function (_Component) {
                         _react2.default.createElement(
                             'label',
                             null,
-                            _react2.default.createElement('input', { name: 'seasonal', type: 'radio' }),
+                            _react2.default.createElement('input', { name: 'seasonal', type: 'radio', value: 'true', onChange: this.changeSeasonal.bind(this) }),
                             'Yes'
                         ),
                         _react2.default.createElement(
                             'label',
                             null,
-                            _react2.default.createElement('input', { name: 'seasonal', type: 'radio' }),
+                            _react2.default.createElement('input', { name: 'seasonal', type: 'radio', value: 'false', onChange: this.changeSeasonal.bind(this) }),
                             'No'
                         ),
                         _react2.default.createElement('br', null),
