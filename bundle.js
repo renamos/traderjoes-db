@@ -17098,7 +17098,7 @@ var Footer = function (_Component) {
                     _react2.default.createElement(
                         "p",
                         null,
-                        "Created by <Rene Ramos/> with React-Redux & Node"
+                        "Created by Rene Ramos with React-Redux & Node"
                     ),
                     _react2.default.createElement(
                         "span",
@@ -17167,7 +17167,7 @@ var Header = function (_Component) {
                 _react2.default.createElement(
                     "h1",
                     null,
-                    "Trader Joe's DB"
+                    "TRADER JOE'S DB"
                 ),
                 _react2.default.createElement(
                     "p",
@@ -17279,7 +17279,7 @@ var LogIn = function (_Component) {
                 _react2.default.createElement(
                     'a',
                     { href: '#' },
-                    'Forgot your password?'
+                    'Create a New User'
                 )
             );
         }

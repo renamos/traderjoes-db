@@ -25,7 +25,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #000000;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -41,6 +41,7 @@
   padding: 0.8em;
   a{
     text-decoration: none;
+    margin:.5em;
   }
 }
 
@@ -50,9 +51,9 @@
 }
 
 .menu-item{
-  color: white;
   transition: all .2s;
   font-family: 'Lato', sans-serif;
+  color:white;
 }
 
 .menu-item:hover{

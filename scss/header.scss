@@ -1,17 +1,28 @@
 #header {
   display: flex;
   flex-direction: column;
-  margin: 25px;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 25px;
+  border-bottom: 1px solid gray;
+  box-shadow: 0px 2px 6px #888888;
   h1, p{
     margin:0;
     padding: 0;
+  }
+  h1{
+    letter-spacing: .4em;
+  }
+  p{
+    color: #BF152B;
   }
 }
 
 @media(max-width: 414px){
   #header{
     h1{
-      font-size: 2em;
+      font-size: 1.1em;
+      margin-top: .6em;
       }
     p{
       font-size: .6em;
