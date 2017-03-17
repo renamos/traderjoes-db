@@ -3,18 +3,6 @@ import {GetOneProduct} from '../actions/products'
 import {connect} from 'react-redux'
 
 
-/*name: String,
- sku: String,
- photo: String,
- price: Number,
- category_ID: String,
- description: String,
- grams: Number,
- seasonal: Boolean,
- discontinued: Boolean,
- type: String,
- date_added: Date*/
-
 class ProductPage extends Component {
 
     componentWillMount() {

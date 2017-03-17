@@ -23,9 +23,6 @@ class AddProduct extends Component {
         }
     }
 
-    //Two methods that are triggered on change
-
-
     submit(event) {
 
         event.preventDefault();

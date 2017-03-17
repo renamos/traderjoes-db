@@ -12,3 +12,13 @@ export function SendLogIn(email, password){
         });
     return { type: 'USER_LOGIN', payload: request  }
 }
+
+export function SendNewUser(data){
+    var request =
+        axios({
+            method: 'post',
+            url: 'https://traderjoes-api.herokuapp.com/user/create',
+            data: data
+        });
+    return { type: 'CREATE_USER', payload: request  }
+}

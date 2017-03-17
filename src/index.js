@@ -11,6 +11,7 @@ import AddProduct from './components/add-product'
 import Signup from './components/sign-up'
 import LogIn from './components/log-in'
 import ProductPage from './components/product-page'
+import NewUser from './components/new-user'
 
 import reducers from './reducers';
 
@@ -25,6 +26,7 @@ ReactDOM.render(
                 <Route path="/sign-up" component={Signup}/>
                 <Route path="/log-in" component={LogIn}/>
                 <Route path="/add-product" component={AddProduct}/>
+                <Route path="/new-user" component={NewUser}/>
                 <Route path="/product-page/:id" component={ProductPage}/>
             </Route>
         </Router>

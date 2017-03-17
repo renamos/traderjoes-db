@@ -35,7 +35,7 @@ class LogIn extends Component {
                 <label>Password</label>
                 <input ref="password" type="password" onKeyPress={this.enterPress}/>
                 <button onClick={this.submit.bind(this)}>submit</button>
-                <a href="#">Create a New User</a>
+                <a href="/new-user">Create a New User</a>
             </div>
         );
     }
